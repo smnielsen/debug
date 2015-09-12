@@ -7,27 +7,25 @@
 'use strict';
 
 var SMN_DEBUG_NS = 'smn_debug_ns';
-let NAMESPACE = 'smn';
+var NAMESPACE = 'smn';
 
-let getNS = () => {}, setNS = (ns) => {};
-let window = window;
+var emptyFunc = function() {};
+
+var getNS = emptyFunc, setNS = emptyFunc;
+var window = window;
 if(window) {
 	// CHECK LOCALSTORAGE
-	let _storage = window.localStorage;
+	var _storage = window.localStorage;
 	if(_storage && _storage.getItem) {
-		let ns = _storage.getItem(SMN_DEBUG_NS);
+		var ns = _storage.getItem(SMN_DEBUG_NS);
 		NAMESPACE = ns || NAMESPACE;
-		getNS = () => NAMESPACE;
-		setNS = (ns) => {
-			_storage.setItem(SMN_DEBUG_NS, ns);
-		}
+		getNS = function() { return NAMESPACE; };
+		setNS = function(ns) { _storage.setItem(SMN_DEBUG_NS, ns); }
 	}
 } else if(process && process.env) {
 	NAMESPACE = process.env.SMN_DEBUG_NS || NAMESPACE;
-	getNS = () => NAMESPACE;
-	setNS = (ns) => {
-		process.env.SMN_DEBUG_NS = ns;
-	}
+	getNS = function() { return NAMESPACE; };
+	setNS = function(ns) { process.env.SMN_DEBUG_NS = ns; }
 }
 
 var Debug = require('debug');
@@ -43,8 +41,8 @@ var Debug = require('debug');
 var debug = function(name) {
 	name = [NAMESPACE, name].join(':');
 
-	function join(...args) {
-		return args.join(':');
+	function join() {
+		return arguments.join(':');
 	}
 
 	var methods = {
@@ -60,7 +58,7 @@ var debug = function(name) {
 		methods.trace.apply(this, arguments);
 	};
 
-	for(let method in methods) {
+	for(var method in methods) {
 		if(methods.hasOwnProperty(method)) {
 			debug[method] = methods[method];
 		}
