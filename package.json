@@ -1,0 +1,28 @@
+{
+  "name": "smn-debug",
+  "version": "1.0.0",
+  "description": "Wrapper project around npm-package 'debug' for easier setup of client & server debugging",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smnielsen/smn-debug.git"
+  },
+  "keywords": [
+    "NodeJs",
+    "JavaScript",
+    "ES6",
+    "debug"
+  ],
+  "author": "Simon Nielsen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/smnielsen/smn-debug/issues"
+  },
+  "homepage": "https://github.com/smnielsen/smn-debug#readme",
+  "dependencies": {
+    "debug": "^2.2.0"
+  }
+}
