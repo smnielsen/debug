@@ -1,7 +1,7 @@
 /**
  * Created by Simon Nielsen
  *
- * This is free to use for anyone
+ * This is free to use of anyone
  *
  */
 'use strict';
@@ -42,7 +42,13 @@ var debug = function(name) {
 	name = [NAMESPACE, name].join(':');
 
 	function join() {
-		return arguments.join(':');
+		var args = [];
+		for(var key in arguments) {
+			if(arguments.hasOwnProperty(key)) {
+				args.push(arguments[key]);
+			}
+		}
+		return args.join(':');
 	}
 
 	var methods = {
@@ -72,4 +78,4 @@ debug.getNS = getNS;
 debug.enable = Debug.enable;
 debug.disable = Debug.disable;
 
-export default debug;
+module.exports = debug;
