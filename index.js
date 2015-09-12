@@ -6,7 +6,7 @@
  */
 'use strict';
 
-const SMN_DEBUG_NS = 'smn_debug_ns';
+var SMN_DEBUG_NS = 'smn_debug_ns';
 let NAMESPACE = 'smn';
 
 let getNS = () => {}, setNS = (ns) => {};
@@ -30,7 +30,7 @@ if(window) {
 	}
 }
 
-const Debug = require('debug');
+var Debug = require('debug');
 /**
  * Available methods:
  *
@@ -40,14 +40,14 @@ const Debug = require('debug');
  * @param name
  * @returns {Function}
  */
-let debug = function(name) {
+var debug = function(name) {
 	name = [NAMESPACE, name].join(':');
 
 	function join(...args) {
 		return args.join(':');
 	}
 
-	const methods = {
+	var methods = {
 		trace: Debug(join(name, 'trace')),
 		log: Debug(join(name, 'debug')),
 		info: Debug(join(name, 'info')),
@@ -56,7 +56,7 @@ let debug = function(name) {
 		danger: Debug(join(name, 'DANGER!'))
 	};
 
-	const debug = function() {
+	var debug = function() {
 		methods.trace.apply(this, arguments);
 	};
 
