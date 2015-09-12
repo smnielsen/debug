@@ -6,29 +6,11 @@
  */
 'use strict';
 
+var Debug = require('debug');
+
 var SMN_DEBUG_NS = 'smn_debug_ns';
 var NAMESPACE = 'smn';
 
-var emptyFunc = function() {};
-
-var getNS = emptyFunc, setNS = emptyFunc;
-var window = window;
-if(window) {
-	// CHECK LOCALSTORAGE
-	var _storage = window.localStorage;
-	if(_storage && _storage.getItem) {
-		var ns = _storage.getItem(SMN_DEBUG_NS);
-		NAMESPACE = ns || NAMESPACE;
-		getNS = function() { return NAMESPACE; };
-		setNS = function(ns) { _storage.setItem(SMN_DEBUG_NS, ns); }
-	}
-} else if(process && process.env) {
-	NAMESPACE = process.env.SMN_DEBUG_NS || NAMESPACE;
-	getNS = function() { return NAMESPACE; };
-	setNS = function(ns) { process.env.SMN_DEBUG_NS = ns; }
-}
-
-var Debug = require('debug');
 /**
  * Available methods:
  *
@@ -73,8 +55,14 @@ var debug = function(name) {
 	return debug;
 };
 
-debug.setNS = setNS;
-debug.getNS = getNS;
+debug.setNS = function(ns) {
+	NAMESPACE = ns || NAMESPACE;
+};
+
+debug.getNS = function() {
+	return NAMESPACE;
+};
+
 debug.enable = Debug.enable;
 debug.disable = Debug.disable;
 
