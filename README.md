@@ -39,7 +39,7 @@ debug.trace('Something...'); <-- Will not be evaluated
 debug.info('Something that will be printed..');
 ```
 
-### Available methods
+#### Available levels
 
 ```javascript
 const DEBUG_LEVELS = {
