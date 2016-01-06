@@ -1,6 +1,3 @@
 'use strict';
 
-require("babel-core/register")({
-  "presets": ["es2015"],
-  "plugins": ["add-module-exports", "transform-object-assign"]
-});
+require("babel-core/register")();

@@ -4,7 +4,9 @@
   "description": "Wrapper project around npm-package 'debug' for easier setup of client & server debugging",
   "main": "index.js",
   "scripts": {
-    "test": "./node_modules/.bin/mocha ./test/**/*.js --opts ./test/mocha.opts",
+    "test": "make test",
+    "test-cov": "make test-cov",
+    "test-coveralls": "make test-coveralls",
     "build": "babel -d lib/ src/"
   },
   "repository": {
@@ -34,7 +36,11 @@
     "babel-plugin-transform-object-assign": "6.3.13",
     "babel-preset-es2015": "6.3.13",
     "chai": "3.4.1",
+    "coveralls": "2.11.6",
+    "isparta": "4.0.0",
+    "istanbul": "0.4.1",
     "mocha": "2.3.4",
+    "mocha-lcov-reporter": "1.0.0",
     "sinon": "1.17.2",
     "sinon-chai": "2.8.0"
   }

@@ -2,6 +2,9 @@
 
 For more info about 'debug' package go to [npm debug](https://www.npmjs.com/package/debug)
 
+[![Coverage Status](https://coveralls.io/repos/smnielsen/smn-debug/badge.svg?branch=master&service=github)](https://coveralls.io/github/smnielsen/smn-debug?branch=master)
+
+
 ### Installation
 
 Use with npm:

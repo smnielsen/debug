@@ -21,6 +21,7 @@ MOCKED_DEBUG.debug = () => {};
 MOCKED_DEBUG.info = () => {};
 MOCKED_DEBUG.warn = () => {};
 MOCKED_DEBUG.error = () => {};
+MOCKED_DEBUG.danger = () => {};
 
 MOCKED_DEBUG.namespace = '';
 MOCKED_DEBUG.enabled = false;
@@ -90,7 +91,7 @@ var DebugModule = function(name) {
 				if(arguments[i] !== undefined) {
 					args.push(arguments[i].toJS ? arguments[i].toJS() : arguments[i]);
 				} else {
-					args.push('undefined');
+					args.push('unknown');
 				}
 			}
 			method.apply(this, args);
@@ -122,12 +123,14 @@ var DebugModule = function(name) {
 
 	var defaultDebugMethod = function() {
 		methods[DEBUG_LEVELS.TRACE].apply(this, arguments);
+		return methods[DEBUG_LEVELS.TRACE];
 	};
 
 	if(Debug.enabled(methods[DEBUG_LEVEL].namespace) === false) {
 		return MOCKED_DEBUG;
 	}
 
+	methods.log = methods[DEBUG_LEVELS.DEBUG];
 	methods.enabled = true;
 
 	return Object.assign(defaultDebugMethod, methods);

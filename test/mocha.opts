@@ -1,3 +1,2 @@
---require ./test/mocha.setup
 --reporter spec
 --full-trace
