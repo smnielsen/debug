@@ -1,6 +1,6 @@
 {
   "name": "debugwrapper",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "Wrapper project around npm-package 'debug' for easier setup of client & server debugging",
   "main": "index.js",
   "scripts": {
