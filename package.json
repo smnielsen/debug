@@ -1,5 +1,5 @@
 {
-  "name": "smn-debug",
+  "name": "debugwrapper",
   "version": "2.1.0",
   "description": "Wrapper project around npm-package 'debug' for easier setup of client & server debugging",
   "main": "index.js",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/smnielsen/smn-debug.git"
+    "url": "git+https://github.com/smnielsen/debugwrapper.git"
   },
   "keywords": [
     "NodeJs",
@@ -22,9 +22,9 @@
   "author": "Simon Nielsen",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/smnielsen/smn-debug/issues"
+    "url": "https://github.com/smnielsen/debugwrapper/issues"
   },
-  "homepage": "https://github.com/smnielsen/smn-debug#readme",
+  "homepage": "https://github.com/smnielsen/debugwrapper#readme",
   "dependencies": {
     "debug": "^2.2.0"
   },

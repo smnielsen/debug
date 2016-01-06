@@ -1,9 +1,10 @@
 ## Debug wrapper
 
-For more info about 'debug' package go to [npm debug](https://www.npmjs.com/package/debug)
+This is a fork of the popular [npm debug](https://www.npmjs.com/package/debug) package.
 
-[![Coverage Status](https://coveralls.io/repos/smnielsen/smn-debug/badge.svg?branch=master&service=github)](https://coveralls.io/github/smnielsen/smn-debug?branch=master)
+Credits and thanks goes to the creator.
 
+[![Coverage Status](https://coveralls.io/repos/smnielsen/debugwrapper/badge.svg?branch=master&service=github)](https://coveralls.io/github/smnielsen/debugwrapper?branch=master)
 
 ### Installation
 
@@ -12,7 +13,7 @@ Use with npm:
 ```javascript
 {
 ...
-	"smn-debug": "ssh+git@github.com:smnielsen/smn-debug.git#[VERSION]"
+	"debugwrapper": "ssh+git@github.com:smnielsen/debugwrapper.git#[VERSION]"
 ...
 }
 ```
@@ -20,7 +21,7 @@ Use with npm:
 ### Use as below
 
 ```javascript
-import Debug from 'smn-debug';
+import Debug from 'debugwrapper';
 Debug.setNS('namespace')
 Debug.enable('namespace:*')
 
@@ -31,8 +32,8 @@ debug('Logging something...')
 ### Set debug level
 
 ```javascript
-import Debug from 'smn-debug';
-import {DEBUG_LEVELS} from 'smn-debug';
+import Debug from 'debugwrapper';
+import {DEBUG_LEVELS} from 'debugwrapper';
 
 Debug.setLevel(DEBUG_LEVELS.INFO);
 
