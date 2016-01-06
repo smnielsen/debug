@@ -24,3 +24,30 @@ Debug.enable('namespace:*')
 let debug = Debug('application');
 debug('Logging something...')
 ````
+
+### Set debug level
+
+```javascript
+import Debug from 'smn-debug';
+import {DEBUG_LEVELS} from 'smn-debug';
+
+Debug.setLevel(DEBUG_LEVELS.INFO);
+
+var debug = Debug('test');
+
+debug.trace('Something...'); <-- Will not be evaluated
+debug.info('Something that will be printed..');
+```
+
+### Available methods
+
+```javascript
+const DEBUG_LEVELS = {
+	TRACE: 'trace',
+	DEBUG: 'debug',
+	INFO: 'info',
+	WARN: 'warn',
+	ERROR: 'error',
+	DANGER: 'danger'
+};
+```

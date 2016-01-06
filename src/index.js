@@ -42,7 +42,7 @@ function getNS() {
 /**
  * SET LEVEL OF DEBUG
  */
-var DEBUG_LEVELS = {
+const DEBUG_LEVELS = {
 	TRACE: 'trace',
 	DEBUG: 'debug',
 	INFO: 'info',
