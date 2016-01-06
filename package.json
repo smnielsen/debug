@@ -1,6 +1,6 @@
 {
   "name": "smn-debug",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Wrapper project around npm-package 'debug' for easier setup of client & server debugging",
   "main": "index.js",
   "scripts": {
